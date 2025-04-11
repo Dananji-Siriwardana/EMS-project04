@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/images/logo.png'; 
-
+import logo from '../assets/images/logo.png';
+import profileIcon from '../assets/images/profile-icon.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,20 +14,24 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           <img src={logo} alt="Company Logo" className="logo" />
-          <span>Gamage Recruiters (PVT) LTD</span>
-        </div>
+          <span className="company-name">Gamage Recruiters (PVT) LTD</span>
+        </Link>
         
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-          <Link to="/" className="navbar-item">Home</Link>
-          <Link to="/about" className="navbar-item">About Us</Link>
-          <Link to="/contact" className="navbar-item">Contact Us</Link>
-          <button className="sign-in">Sign in</button>
-          <div className="profile-icon"></div>
+          <Link to="/" className="navbar-item" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link to="/about" className="navbar-item" onClick={() => setIsOpen(false)}>About Us</Link>
+          <Link to="/contact" className="navbar-item" onClick={() => setIsOpen(false)}>Contact Us</Link>
+          <div className="auth-section">
+            <button className="sign-in">Sign in</button>
+            <div className="profile-icon">
+              <img src={profileIcon} alt="Profile" className="profile-img" />
+            </div>
+          </div>
         </div>
 
-        <div className="navbar-burger" onClick={toggleMenu}>
+        <div className={`navbar-burger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
@@ -37,4 +41,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
