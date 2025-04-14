@@ -176,6 +176,7 @@
   width: 60px;
   height: 60px;
   margin-left: -120px;
+  margin-top:-20px;
 }
 
 .mobile-sign-in {
@@ -226,7 +227,7 @@
 
 .mobile-bottom {
   padding: 20px;
-  border-top: 1px solid #f0f0f0;
+  
 }
 
 .mobile-company-brand {
