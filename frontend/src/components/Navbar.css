@@ -109,72 +109,172 @@
   object-fit: cover;
 }
 
-/* Mobile Menu (Hamburger) */
-.navbar-burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 24px;
+/* Mobile header styling */
+.mobile-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
 }
 
-.navbar-burger span {
-  display: block;
-  width: 100%;
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
   height: 3px;
   background-color: #333;
-  transition: all 0.3s;
+  border-radius: 2px;
 }
 
-/* Mobile Responsiveness */
+/* Mobile sidebar styling */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80%;
+  max-width: 300px;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.mobile-top {
+  padding: 20px 0;
+  flex-grow: 1;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  
+}
+
+.mobile-profile-img {
+  width: 60px;
+  height: 60px;
+  margin-left: -120px;
+}
+
+.mobile-sign-in {
+  background-color: #00A3A3;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  margin-left: -140px;
+  width: 110px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.mobile-sign-in:hover {
+  background-color: #008585;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.mobile-nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-nav-icon {
+  margin-right: 15px;
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.mobile-bottom {
+  padding: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobile-company-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.mobile-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.mobile-company-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Overlay when mobile menu is open */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 99;
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .navbar-menu {
-    position: fixed;
-    top: 60px;
-    left: -100%;
-    width: 80%;
-    height: calc(100vh - 60px);
-    background: #fff;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s;
+  .navbar {
+    display: none;
   }
+}
 
-  .navbar-menu.active {
-    left: 0;
-  }
-
-  .navbar-item {
-    margin: 15px 0;
-    font-size: 18px;
-  }
-
-  .auth-section {
-    margin: 20px 0 0 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .profile-icon {
-    margin-left: 0;
-    margin-top: 15px;
-  }
-
-  .navbar-burger {
-    display: flex;
-  }
-
-  /* Hamburger to X animation */
-  .navbar-burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .navbar-burger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .navbar-burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-sidebar {
+    display: none;
   }
 }
