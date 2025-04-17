@@ -61,7 +61,7 @@ const Navbar = () => {
     </div>
   );
 
-  // Desktop navigation (your existing code)
+  // Desktop navigation 
   const DesktopNavigation = () => (
     <nav className="navbar">
       <div className="navbar-container">
