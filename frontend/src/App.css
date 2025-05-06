@@ -1,0 +1,265 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sidebar {
+  width: 250px;
+  background-color:  #0097a7 !important; /* Your primary color */
+  color: white;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  display: flex; /* Align icon and text */
+  justify-content: space-between; /* Space between text and icon */
+  align-items: center; /* Center items vertically */
+  font-size: 20px; /* Adjust font size */
+}
+
+.logout {
+  background-color: #000; /* Logout button color */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+}
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  background-color: #fff; /* Background color for the navbar */
+  border-bottom: 2px solid #009688; /* Add a border at the bottom */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  position: fixed; /* Keep navbar fixed */
+  top: 0; /* Position at the top */
+  width: 97%; /* Full width */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.navbar h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 24px; /* Adjust font size */
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navbar-item {
+  margin-left: 20px; /* Space between icons */
+}
+
+.icon {
+  margin-left: 20px; /* Space between icons */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 20px; /* Adjust icon size */
+}
+
+.navbar-link {
+  margin-left: 20px;
+  text-decoration: none; /* Remove underline */
+  color:  #0097a7 !important; /* Match your theme color */
+  font-weight: bold; /* Make text bold */
+}
+
+.navbar-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 60px; /* Space for the fixed navbar */
+  margin-left: 270px; /* Space for the sidebar */
+}
+
+.search-container {
+  position: relative; /* Position relative for absolute positioning of the icon */
+  margin-left: 20px; /* Adjust as needed */
+  
+}
+
+.search-icon {
+  position: absolute; /* Position it inside the search bar */
+  left: 10px; /* Adjust as needed */
+  top: 60%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  color: #ccc; /* Icon color */
+  margin-top: 20px;
+  margin-left: 20px; /* Move the search bar to the right */
+
+}
+
+.search-bar {
+  margin-top: 60px; /* Space between navbar and search bar */
+  padding: 10px 40px;
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 15px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  background-color: #fff; /* White background */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  padding-left: 30px; /* Space for the icon */
+  margin-left: 20px; /* Move the search bar to the right */
+}
+
+.search-bar:focus {
+  outline: none; /* Remove default outline */
+  border-color:  #0097a7 !important; /* Change border color on focus */
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3); /* Enhance shadow on focus */
+}
+
+/* Dropdown Styles */
+.navbar-dropdown {
+  position: absolute;
+  top: 60px; /* Position below the navbar */
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Ensure it stays above other elements */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.navbar-dropdown ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar-dropdown li {
+  margin: 10px 0; /* Space between items */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .content {
+      margin-left: 0; /* Remove left margin for mobile */
+      padding: 10px; /* Adjust padding */
+  }
+
+  .search-bar {
+      max-width: 100%; /* Full width on mobile */
+      padding: 10px 30px; /* Adjust padding */
+  }
+
+  .search-icon {
+      left: 10px; /* Adjust icon position */
+      font-size: 20px; /* Adjust icon size for mobile */
+  }
+
+  .sidebar {
+      width: 100%; /* Full width for sidebar on mobile */
+      position: center; /* Change position for mobile */
+      top: 60px; /* Position below the navbar */
+      transform: translateX(-100%); /* Hide sidebar by default */
+  }
+
+  .navbar-link{
+      display: none; /* Hide additional links on mobile */
+  }
+  .sidebar.open {
+        transform: translateX(0); /* Show sidebar when open */
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 10px 10px; /* Adjust padding for mobile */
+  }
+
+  .navbar h1 {
+    display: block; /* Show the title on mobile */
+    margin-bottom: 10px; /* Space below the title */
+  }
+
+  .navbar-items {
+    display: flex; /* Show navbar items on mobile */
+    
+  }
+
+  
+
+  .navbar-dropdown {
+    display: block; /* Show dropdown on mobile */
+  }
+
+  .icon {
+    margin-left: 20px ; /* Remove left margin for icons */
+    margin-top: 10px; /* Add space between icons */
+
+  }
+}
