@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Navbar Structure */
+.navbar {
+  background-color: #fff;
+  padding: 9px 0; /* Exact top padding from design */
+  font-family: 'Arial', sans-serif;
+  position: sticky;
+  top: 50px;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 42px; /* Exact height from design */
+}
+
+/* Branding (Logo + Company Name) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  
+}
+
+.logo {
+  height: 62px; 
+  width: 62px;
+  position: absolute;
+  top: 1px;
+  margin-left: -320px;
+  
+}
+
+.company-name {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #333;
+  margin-left: -240px;
+}
+
+/* Navigation Links */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  margin-left: 200px;
+  
+}
+
+.navbar-item {
+  margin: 0 30px;
+  font-family: 'Poppins';
+  text-decoration: none;
+  color: #0097A7;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.navbar-item:hover {
+  color: #0097A7; /* Optional hover effect */
+}
+
+/* Auth Section (Sign In + Profile) */
+.auth-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 40px;
+}
+
+.sign-in {
+  background: #0097A7; 
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+  margin-left: 400px;
+}
+
+
+.sign-in:hover {
+  color: #ffffff; 
+}
+
+.profile-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: -600px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile header styling */
+.mobile-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Mobile sidebar styling */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80%;
+  max-width: 300px;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.mobile-top {
+  padding: 20px 0;
+  flex-grow: 1;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  
+}
+
+.mobile-profile-img {
+  width: 60px;
+  height: 60px;
+  margin-left: -120px;
+  margin-top:-20px;
+}
+
+.mobile-sign-in {
+  background-color: #00A3A3;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  margin-left: -140px;
+  width: 110px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.mobile-sign-in:hover {
+  background-color: #008585;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.mobile-nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-nav-icon {
+  margin-right: 15px;
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.mobile-bottom {
+  padding: 20px;
+  
+}
+
+.mobile-company-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.mobile-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.mobile-company-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Overlay when mobile menu is open */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 99;
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-sidebar {
+    display: none;
+  }
+}

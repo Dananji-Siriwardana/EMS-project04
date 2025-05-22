@@ -1,5 +1,31 @@
+/* Reset and base styles from Nethmi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   text-align: center;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .App-logo {
@@ -39,7 +65,7 @@
 
 .sidebar {
   width: 250px;
-  background-color:  #0097a7 !important; /* Your primary color */
+  background-color:  #0097a7 !important;
   color: white;
   padding: 20px;
   height: 100vh;
@@ -56,14 +82,14 @@
 
 .sidebar li {
   margin: 15px 0;
-  display: flex; /* Align icon and text */
-  justify-content: space-between; /* Space between text and icon */
-  align-items: center; /* Center items vertically */
-  font-size: 20px; /* Adjust font size */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
 }
 
 .logout {
-  background-color: #000; /* Logout button color */
+  background-color: #000;
   color: white;
   border: none;
   padding: 10px;
@@ -83,11 +109,6 @@
     flex-direction: column;
   }
 }
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-}
 
 .app {
   display: flex;
@@ -98,18 +119,18 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 30px 20px;
-  background-color: #fff; /* Background color for the navbar */
-  border-bottom: 2px solid #009688; /* Add a border at the bottom */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-  position: fixed; /* Keep navbar fixed */
-  top: 0; /* Position at the top */
-  width: 97%; /* Full width */
-  z-index: 1000; /* Ensure it stays above other elements */
+  background-color: #fff;
+  border-bottom: 2px solid #009688;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 97%;
+  z-index: 1000;
 }
 
 .navbar h1 {
-  margin: 0; /* Remove default margin */
-  font-size: 24px; /* Adjust font size */
+  margin: 0;
+  font-size: 24px;
 }
 
 .navbar-items {
@@ -119,78 +140,75 @@ body {
 }
 
 .navbar-item {
-  margin-left: 20px; /* Space between icons */
+  margin-left: 20px;
 }
 
 .icon {
-  margin-left: 20px; /* Space between icons */
-  cursor: pointer; /* Change cursor on hover */
-  font-size: 20px; /* Adjust icon size */
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .navbar-link {
   margin-left: 20px;
-  text-decoration: none; /* Remove underline */
-  color:  #0097a7 !important; /* Match your theme color */
-  font-weight: bold; /* Make text bold */
+  text-decoration: none;
+  color:  #0097a7 !important;
+  font-weight: bold;
 }
 
 .navbar-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
 .content {
   flex: 1;
   padding: 20px;
-  margin-top: 60px; /* Space for the fixed navbar */
-  margin-left: 270px; /* Space for the sidebar */
+  margin-top: 60px;
+  margin-left: 270px;
 }
 
 .search-container {
-  position: relative; /* Position relative for absolute positioning of the icon */
-  margin-left: 20px; /* Adjust as needed */
-  
+  position: relative;
+  margin-left: 20px;
 }
 
 .search-icon {
-  position: absolute; /* Position it inside the search bar */
-  left: 10px; /* Adjust as needed */
-  top: 60%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for vertical centering */
-  color: #ccc; /* Icon color */
+  position: absolute;
+  left: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+  color: #ccc;
   margin-top: 20px;
-  margin-left: 20px; /* Move the search bar to the right */
-
+  margin-left: 20px;
 }
 
 .search-bar {
-  margin-top: 60px; /* Space between navbar and search bar */
+  margin-top: 60px;
   padding: 10px 40px;
   width: 100%;
-  max-width: 400px; /* Adjust as needed */
-  border: 1px solid #ccc; /* Add border */
-  border-radius: 15px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  background-color: #fff; /* White background */
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
-  padding-left: 30px; /* Space for the icon */
-  margin-left: 20px; /* Move the search bar to the right */
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+  padding-left: 30px;
+  margin-left: 20px;
 }
 
 .search-bar:focus {
-  outline: none; /* Remove default outline */
-  border-color:  #0097a7 !important; /* Change border color on focus */
-  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3); /* Enhance shadow on focus */
+  outline: none;
+  border-color:  #0097a7 !important;
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);
 }
 
-/* Dropdown Styles */
 .navbar-dropdown {
   position: absolute;
-  top: 60px; /* Position below the navbar */
+  top: 60px;
   right: 0;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 999; /* Ensure it stays above other elements */
+  z-index: 999;
   padding: 10px;
   border-radius: 4px;
 }
@@ -201,65 +219,61 @@ body {
 }
 
 .navbar-dropdown li {
-  margin: 10px 0; /* Space between items */
+  margin: 10px 0;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .content {
-      margin-left: 0; /* Remove left margin for mobile */
-      padding: 10px; /* Adjust padding */
+      margin-left: 0;
+      padding: 10px;
   }
 
   .search-bar {
-      max-width: 100%; /* Full width on mobile */
-      padding: 10px 30px; /* Adjust padding */
+      max-width: 100%;
+      padding: 10px 30px;
   }
 
   .search-icon {
-      left: 10px; /* Adjust icon position */
-      font-size: 20px; /* Adjust icon size for mobile */
+      left: 10px;
+      font-size: 20px;
   }
 
   .sidebar {
-      width: 100%; /* Full width for sidebar on mobile */
-      position: center; /* Change position for mobile */
-      top: 60px; /* Position below the navbar */
-      transform: translateX(-100%); /* Hide sidebar by default */
+      width: 100%;
+      position: center;
+      top: 60px;
+      transform: translateX(-100%);
   }
 
-  .navbar-link{
-      display: none; /* Hide additional links on mobile */
+  .navbar-link {
+      display: none;
   }
+
   .sidebar.open {
-        transform: translateX(0); /* Show sidebar when open */
+      transform: translateX(0);
   }
 
   .navbar {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the start */
-    padding: 10px 10px; /* Adjust padding for mobile */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px;
   }
 
   .navbar h1 {
-    display: block; /* Show the title on mobile */
-    margin-bottom: 10px; /* Space below the title */
+    display: block;
+    margin-bottom: 10px;
   }
 
   .navbar-items {
-    display: flex; /* Show navbar items on mobile */
-    
+    display: flex;
   }
 
-  
-
   .navbar-dropdown {
-    display: block; /* Show dropdown on mobile */
+    display: block;
   }
 
   .icon {
-    margin-left: 20px ; /* Remove left margin for icons */
-    margin-top: 10px; /* Add space between icons */
-
+    margin-left: 20px;
+    margin-top: 10px;
   }
 }
