@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUserCircle, faBars, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Sidebar from './components/Sidebar';
-import Home from './components/Home';
+import Sidebar from './Components/Sidebar';
+import Home from './Components/Home';
 import './App.css';
 
 function App() {
