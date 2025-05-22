@@ -1,0 +1,315 @@
+/* === Reset and Base === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* === Layout === */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.top-content {
+  /* flex-grow: 1; */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.main-content {
+  flex-grow: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 250px;
+  background-color: #007c8c;
+  color: white;
+  display: flex;
+  transition: transform 0.3s ease;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo-section {
+  display: flex;
+  text-align: center;
+  padding: 0 20px;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.logo-section h2 {
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 10px;
+}
+.nav-men {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: #057e8a;
+  border-radius: 6px;
+}
+
+.nav-item .icon {
+  color: white;
+}
+
+/* === Learning Hub === */
+.learning-hub {
+  padding: 20px;
+}
+
+.learning-box {
+  background-color: #054957;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.question-mark {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  color: #054957;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.learning-box h4 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.learning-box p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.learning-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: white;
+  color: #054957;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* === Logout Button === */
+.logout-btn {
+  margin: 20px;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* === Topbar === */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: white;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-title {
+  font-size: 16px;
+  color: #0096a3;
+  font-weight: bold;
+}
+
+.topbar-right,
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-menu span {
+  margin: 0 15px;
+  font-size: 14px;
+  color: #0096a3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* === Search Bar === */
+.container {
+  width: 100%;
+  /* background-color: #054957; */
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inside-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+/* background-color: #057e8a; */
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* === Mobile Responsive === */
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+  }
+
+  .main-content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .topbar {
+    padding: 15px;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .icons {
+    margin-left: auto;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .learning-box p {
+    font-size: 11px;
+  }
+
+  .logout-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .search-bar input {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.search-bar {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
