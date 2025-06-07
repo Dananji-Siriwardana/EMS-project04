@@ -1,9 +1,13 @@
+
+
+/*Main CSS- Web View*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   
+
 .footer {
     background-color: #f9f9f9;
     padding: 40px 20px;
